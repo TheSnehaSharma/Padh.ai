@@ -56,7 +56,7 @@ export const uploadPDFs = async (files: File[], categories: string[]) => {
     formData.append('file', files[i]);
     formData.append('category', categories[i]);
     
-    const response = await fetchWithRetry(`${API_BASE_URL}/upload`, {
+    const response = await fetchWithRetry(`${PUBLIC_API_URL}/upload`, {
       method: 'POST',
       body: formData,
       credentials: 'include',
