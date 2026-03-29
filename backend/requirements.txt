@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+chromadb
+sentence-transformers
+python-multipart
+langchain-text-splitters
+pypdf
+phidata
+duckduckgo-search
+groq
+python-dotenv
