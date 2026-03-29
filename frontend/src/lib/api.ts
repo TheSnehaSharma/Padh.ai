@@ -1,6 +1,6 @@
 import { Topic, NotesData, AudioData, PracticeQuestion, TopicAnalysis, PassPackResponse } from '../types';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
+const API_BASE_URL = process.env.PUBLIC_API_URL || '/api';
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -47,13 +47,8 @@ export const uploadPDFs = async (files: File[], categories: string[]) => {
   files.forEach((file) => {
     formData.append('file', file);
   });
-  // In a real app with multiple files/categories, we might need a different structure
-  // or multiple requests. For now, assuming one file per request or handling logic in component.
-  // The backend expects 'file' and 'category'.
+
   // If we upload multiple, we might need to loop.
-  
-  // Let's assume the component calls this for each file or we handle it here.
-  // The user prompt says: "uploadPDFs(files, categories): Must construct a FormData object..."
   
   let lastResult = null;
   for (let i = 0; i < files.length; i++) {
@@ -86,7 +81,7 @@ export const uploadPDFs = async (files: File[], categories: string[]) => {
           errorMessage += `: ${text.substring(0, 100)}`;
         }
       } catch (e) {
-        // ignore text read error
+
       }
       throw new Error(errorMessage);
     }
