@@ -1,2 +1,0 @@
-# Python dependencies for analysis script
-# Add pandas, numpy, etc. if needed in the future
