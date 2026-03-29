@@ -1,6 +1,6 @@
 import { Topic, NotesData, AudioData, PracticeQuestion, TopicAnalysis, PassPackResponse } from '../types';
 
-const API_BASE_URL = process.env.PUBLIC_API_URL;
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -56,7 +56,7 @@ export const uploadPDFs = async (files: File[], categories: string[]) => {
     formData.append('file', files[i]);
     formData.append('category', categories[i]);
     
-    const response = await fetchWithRetry(`${PUBLIC_API_URL}/upload`, {
+    const response = await fetchWithRetry(`${API_BASE_URL}/upload`, {
       method: 'POST',
       body: formData,
       credentials: 'include',
