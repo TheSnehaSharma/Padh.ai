@@ -1,0 +1,6 @@
+{
+  "name": "Padh.ai",
+  "description": "Exam Acceleration Engine using Gemini OCR and Groq LLMs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

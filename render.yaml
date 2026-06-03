@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: padhai
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ALLOWED_ORIGINS
+        value: "" # Add your frontend URL here if separated, otherwise leave blank
+      - key: PORT
+        value: "3000"
+      # IMPORTANT: Add GEMINI_API_KEY and GROQ_API_KEY in Render Dashboard!
